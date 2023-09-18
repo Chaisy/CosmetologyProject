@@ -1,0 +1,17 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block content %}
+<h1 class="name">Doctors</h1>
+{% if doctor_list %}
+<table>
+<tr><th>Name:</th><th>Phone:</th></tr> <!--ряд с ячейками заголовков-->
+
+    {% for doctor in doctor_list %}
+    <tr><td> {{ doctor.name }} <br><img style="height:100px" src={{doctor.photo}} alt="photo"></td><td>{{ doctor.number }}</td></tr>
+    {% endfor %}
+
+</table>
+{% else %}
+    <p>There are no doctors in the salon</p>
+{% endif %}
+{% endblock %}
