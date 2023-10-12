@@ -2,16 +2,23 @@
 
 {% block content %}
 <h1 class="name">Doctors</h1>
-{% if doctor_list %}
-<table>
-<tr><th>Name:</th><th>Phone:</th></tr> <!--ряд с ячейками заголовков-->
 
-    {% for doctor in doctor_list %}
-    <tr><td> {{ doctor.name }} <br><img style="height:100px" src={{doctor.photo}} alt="photo"></td><td>{{ doctor.number }}</td></tr>
+<section class="doctors">
+    {% if doctor_list %}
+        {% for doctor in doctor_list %}
+            <article class="doctor-container-item" style="width: 200px; text-align:center">
+                    <h3 style="margin:10px; color:#9887ed">{{doctor.name}}</h3>
+                    <p><img style="height:100px" src={{doctor.photo}} alt="photo"></p>
+                    <p>Phone:<br> {{doctor.number}}</p>
+            </article>
     {% endfor %}
+    {% else %}
+        <p>There are no doctors in the salon</p>
+    {% endif %}
+</section>
 
-</table>
-{% else %}
-    <p>There are no doctors in the salon</p>
-{% endif %}
+
+
+
+
 {% endblock %}

@@ -3,8 +3,11 @@
 {% block title %}Static Info{% endblock %}
 
 {% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'site.css' %}">
 <h1>Static Info</h1>
 <table>
+    <caption>Statistic</caption>
 <tr>
     <th colspan="2">Counts of:</th>
     <th rowspan="2" id="service">Count of services:</th><th rowspan="2" id="appoint">Count of doctor's appointment:
@@ -15,11 +18,11 @@
     <th id="clients">Count of clients:</th><th id="doc">Count of doctors:</th>
 </tr>
 
-</tr>
-    <tr><td headers="clients"> {{ client_count }}</td><td headers="doc">{{ doctor_count }}</td>
+
+    <tbody><td headers="clients"> {{ client_count }}</td><td headers="doc">{{ doctor_count }}</td>
         <td headers="service">{{ service_count }}</td><td headers="appoint">{{ priems_count}}</td>
         <td headers="proc">{{ latest_proc }}</td> <td headers="popS">{{ pop_service }}</td>
-    </tr>
+    </tbody>
 
 
 </table>

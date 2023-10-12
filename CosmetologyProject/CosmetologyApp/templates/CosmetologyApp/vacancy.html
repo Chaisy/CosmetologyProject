@@ -2,11 +2,12 @@
 
 {% block content %}
 <h1 class="name">Vacancy</h1>
-<section>
+<section class="grid-container">
     {% if vacancy_list %}
     {% for vacancy in vacancy_list %}
-    <article style="width: 200px; text-align:center">
+    <article class="grid-container-item" style="width: 200px; text-align:center">
         <h3 style="margin:10px; color:#9887ed"><a style="text-decoration:none" href="/CosmetologyApp/vacancy/{{ vacancy.id }}">{{vacancy.job_character}}</a></h3>
+        <img  src="https://gagaru.club/uploads/posts/2023-06/1685616088_gagaru-club-p-malenkie-zvezdochki-instagram-8.png" alt="star">
         <p>Experience: {{vacancy.experience}} year(s)</p>
         <p style="margin:10px">Description: {{vacancy.description}}</p>
         <p>Salary: {{vacancy.salary}} BYN</p>
@@ -16,11 +17,12 @@
     <p>There are no vacancy in the salon</p>
     {% endif %}
 
+
+
+</section>
     {% if user.is_superuser %}
     <p><a href="/CosmetologyApp/vacancy/add/">Add</a></p>
     {% endif %}
-
-</section>
 {% endblock %}
 
 

@@ -491,6 +491,16 @@ class News(View):
             'CosmetologyApp/news.html',
             context
         )
+
+class HTML(View):
+    @staticmethod
+    def get(request):
+        context = {}
+        return render(
+            request,
+            'CosmetologyApp/HTML.html',
+            context
+        )
 class ancient_cosmetic(View):
     @staticmethod
     def get(request):

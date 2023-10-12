@@ -7,27 +7,38 @@
 <section>
     {% if promocode_list %}
 
-            <h1>Valid Promocodes</h1>
+            <h1 >Valid Promocodes</h1>
+    <ul class="promocodes">
                 {% for promocode in promocode_list %}
-                    {% if promocode.expiration_date >= current_date %}
-                    <article style="width: 200px; text-align:center">
-                        <h3 style="margin:10px; color:#9887ed"><a style="text-decoration:none" href="/CosmetologyApp/promocode/{{ promocode.id }}">{{promocode.code}}</a></h3>
-                        <p>Start Date: {{promocode.start_date}}</p>
-                        <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
-                    </article>
+
+                        {% if promocode.expiration_date >= current_date %}
+                        <li>
+                            <h3 style="margin:10px; color:#9887ed"><a style="text-decoration:none" href="/CosmetologyApp/promocode/{{ promocode.id }}">{{promocode.code}}</a></h3>
+                            <p>Start Date: {{promocode.start_date}}</p>
+                            <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
+                        </li>
                      {% endif %}
+
+
                 {% endfor %}
+        </ul>
 
             <h1>Invalid Promocodes</h1>
+    <ul  class="promocodes">
+
             {% for promocode in promocode_list %}
-                {% if promocode.expiration_date < current_date %}
-                    <article style="width: 200px; text-align:center">
-                        <h3 style="margin:10px; color:#9887ed"><a style="text-decoration:none" href="/CosmetologyApp/promocode/{{ promocode.id }}">{{promocode.code}}</a></h3>
-                        <p>Start Date: {{promocode.start_date}}</p>
-                        <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
-                    </article>
+
+                        {% if promocode.expiration_date < current_date %}
+                        <li >
+                            <h3 style="margin:10px; color:#9887ed"><a style="text-decoration:none" href="/CosmetologyApp/promocode/{{ promocode.id }}">{{promocode.code}}</a></h3>
+                            <p>Start Date: {{promocode.start_date}}</p>
+                            <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
+                        </li>
                 {% endif %}
+
+
             {% endfor %}
+    </ul>
 
     {% else %}
         <p>There are no promocodes in the salon</p>

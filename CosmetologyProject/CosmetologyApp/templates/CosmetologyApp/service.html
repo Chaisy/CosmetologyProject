@@ -3,15 +3,25 @@
 {% block content %}
 <h1 class="name">Services</h1>
 {% if service_list %}
-<table>
-<tr><th>Service:</th><th>Price:</th></tr> <!--ряд с ячейками заголовков-->
-
+<ul class="list_service">
     {% for service in service_list %}
-    <tr><td> <a href="/CosmetologyApp/service/{{ service.id }}">{{ service.procedure }}</a></td>
-        <td>{{ service.price }}</td></tr>
-    {% endfor %}
+    <li>
+        <a href="/CosmetologyApp/service/{{ service.id }}">{{ service.procedure }}</a>
+        <p>Price: {{service.price}}</p>
+    </li>
 
-</table>
+    {% endfor %}}
+
+</ul>
+<!--<table>-->
+<!--<tr><th>Service:</th><th>Price:</th></tr> &lt;!&ndash;ряд с ячейками заголовков&ndash;&gt;-->
+
+<!--    {% for service in service_list %}-->
+<!--    <tr><td> <a href="/CosmetologyApp/service/{{ service.id }}">{{ service.procedure }}</a></td>-->
+<!--        <td>{{ service.price }}</td></tr>-->
+<!--    {% endfor %}-->
+
+<!--</table>-->
 {% else %}
     <p>There are no services in the salon</p>
 {% endif %}

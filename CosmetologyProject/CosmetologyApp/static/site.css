@@ -1,28 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+html{
+    background-image:
+                  url("https://avatars.mds.yandex.net/get-mpic/6259567/img_id7395457012319653700.jpeg/orig");
+}
 .message {
     font-weight: 600;
     color: blue;
 }
 
 .navbar {
-    background-color: #9887ed;
-    font-size: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    height: 50px;
+    color: black;
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
 
 }
+.navbar-brand, .navbar-brand>a{
+    font-kerning: normal;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
 
-.navbar a {
+}
+.navbar a{
+    transition: font-size 1ms;
+    color:black;
+}
+.navbar a:hover{
+    color: #8374d3;
+    text-decoration: underline #bbaeef;
+    font-size: 33px;
+}
+.navbar a:active{
+    color: black;
+}
+
+.navbar a:focus{
+    font-size: 33px;
+    text-decoration: underline #bbaeef;
+}
+
+
+a[href^="#"]{
+     color:#8374d3;
+    text-decoration: none;
+}
+
+a[href^="#"]:visited{
+     color:black;
+}
+.usualMenu, .specialMenu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.specialMenu{
+        background: linear-gradient(to left, #ffffff, #bbaeef);
+    height: 55px;
+}
+.usualMenu{
+        margin-bottom: 40px;
+
+}
+.navbar>div>a {
     text-decoration: none;
     color: inherit;
+    font-style: italic;
+
 }
+h1{
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 50px;
+
+}
+.time{
+
+    background: linear-gradient(to left, #ffffff, #bbaeef);
+
+
+}
+article>h1{
+    height: 100px;
+    background: linear-gradient(to left, #ffffff, #bbaeef);
+    margin-bottom: 0;
+    padding-left:100px;
+
+
+}
+
+.timing{
+    font-family: 'Cedarville Cursive', cursive;
+    text-align: right;
+    padding-right:100px;
+    padding-top: 10px;
+    font-size: 30px;
+    margin: 0;
+    height: 100px;
+    background: linear-gradient(to right, #ffffff, #bbaeef);
+}
+
+.reklama{
+    position: relative;
+  height: 220px;
+  margin: 1.5em 1em;
+  padding: .2em;
+  border: 1px solid #bbaeef;
+  border-radius: 5px;
+  font-size: 1.2em;
+  }
+.reklama:before {
+  content: attr(data-content);
+  display: inline-block;
+  position: absolute;
+  left: .2em;
+  height: 200px;
+  width: 420px;
+  padding: .2em;
+  background: url("https://avatars.mds.yandex.net/i?id=21eee7d481865bcf8809e6054eb4969a64a7257d-8803246-images-thumbs&n=13");
+  border-radius: 3px;
+  animation: timing 5s infinite alternate;
+  cursor: pointer;
+  }
+.reklama:hover:before{
+  animation-play-state: paused;
+  }
+
+@keyframes timing {
+  100%{
+    left: 85%;
+    margin-left: -9.6em;
+    }
+}
+
+q[title]{
+    color: #8374d3;
+}
+.devis{
+    text-align: center;
+}
+
+blockquote abbr{
+    color:#8374d3
+}
+
+h1[title="about us"]{
+    text-align: center;
+}
+pre[class^="preText"]{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+blockquote[cite$="/en"]{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logotype{
+    border-radius: 150px;
+
+    height:200px;
+    width:200px;
+    border: 1px solid black;
+}
+.list_service{
+    display: flex;
+    justify-content: space-between;
+
+}
+.list_service li{
+    background-color: plum;
+}
+
+ul a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #8374d3;
+    transition: font-size 1ms;
+}
+ul a:hover{
+    font-size: 22px;
+    color: black;
+}
+.list_service li:hover:first-child{
+    transform: skewX(20deg);
+    transition: all 0.5s ease-in-out;
+}
+.list_service li:hover:last-child{
+    transform: skewX(-20deg);
+    transition: all 0.5s ease-in-out;
+}
+div img[class="logotype"]:hover{
+   transform: rotate(720deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.doctors{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100px;
+    justify-content: space-around;
+}
+.doctor-container-item{
+    width: 100px;
+    background-color: #edebfa;
+    border: 2px solid #a99cf6;
+    border-radius: 20px;
+}
+q:lang(de){
+    quotes: "\201E" "\201C";
+}
+q:lang(en) {
+    quotes: "\201C" "\201D";
+}
+.NameUser:invalid{
+    color: red;
+}
+.rateUser:out-of-range{
+    color: red;
+}
+input, textarea{
+    font-family: cursive;
+    font-size: 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+textarea{
+        height: 200px;
+}
+textarea:enabled:focus, input:enabled:focus{
+    background-color: plum;
+}
+input:required{
+    border: 2px solid red;
+}
+p>input#enable:hover:enabled{
+    background-color: greenyellow;
+
+}
+p>input#disable:disabled:hover{
+    background-color: indianred;
+}
+p>input#enable, p>input#disable{
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 10px;
+}
+fieldset{
+    border: 3px solid rebeccapurple;
+    width: 300px;
+    margin: auto;
+}
+
+input:checked{
+    background-color: red;
+}
+
+input[type="checkbox"]:checked + span {
+    background: orange;
+}
+input[type="radio"]:checked + span {
+    color: mediumaquamarine;
+}
+.Loremi{
+    text-align: center;
+}
+.Loremi:first-letter{
+    color: blue;
+    font-size: 230%;
+}
+.Loremi:first-line{
+    font-family: sans-serif;
+    color: dimgray;
+}
+p.greeting{
+    text-align: center;
+}
+p.greeting:before{
+    content: " As fact, ";
+    color: orange;
+}
+p.greeting:after{
+    content: " a very good friends!!!";
+    color: orange;
+}
+
+.list_service{
+    padding-bottom: 0;
+    list-style-type:  none;
+}
+.list_service li:before{
+    content: "\263a";
+}
+p::selection, pre::selection, figure::selection{
+    color: yellow;
+}
+
+input[type="button"], input[type="submit"]{
+    margin: auto;
+    cursor: wait;
+}
+#box {
+        width: 100px;
+        height: 100px;
+        background-color: teal;
+    }
+
+    @media (max-width: 700px) {
+        #box {
+            background-color: red;
+        }
+    }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    /*background-color: #2196F3;*/
+    padding: 10px;
+}
+.grid-container-item:nth-child(3n) img{
+    width: 50px;
+    float: left;
+    clear: bottom;
+}
+.grid-container-item:nth-child(2n) img{
+    width: 50px;
+    float: right;
+    clear: bottom;
+}
+.grid-container-item:first-child img{
+    width: 50px;
+    float: left;
+    clear: bottom;
+}
+.grid-container > .grid-container-item {
+    background: rgb(223, 166, 255);
+    border: 1px solid;
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50px;
+}
+.partners{
+    text-align: center;
+    padding:5px;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*border: 4px solid #8374d3;*/
+    margin:auto;
+    width:800px;
+
+}
+.partners-item img{
+    border-radius: 50%;
+    margin: 10px;
+    width:200px;
+    height:100px;
+    box-shadow: 0 0  7px black;
+}
+
+.lastUpdate{
+    position: static;
+    border: 4px solid #8374d3; padding:5px; margin:auto; text-align:center; width:500px;
+}
+
+p.clip {
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+
+article[title="poema"],figcaption[title="poem_caption"] {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    text-transform: capitalize;
+    text-indent: 40px;
+    line-height: 150%;
+    letter-spacing: 2px;
+    word-spacing:10px;
+    word-wrap: break-word;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    position: relative;
+    left: 20%;
+
+
+}
+figcaption[title^="poem"]{
+    font-variant: small-caps;
+}
+
+
+.sertificate {
+    width: 500px;
+    margin: auto;
+    border-image: url(ornament.png) 20 20 repeat;
+    background-image: url(bg.jpg);
+    border: 30px solid mistyrose;
+
+    font-family: Algerian, sans-serif !important;
+}
+
+.media-sphere{
+    text-align: center;
+    padding: 10px;
+}
+.clip-news{
+    white-space: nowrap; /* Запрещаем перенос строк */
+    overflow: hidden; /* Обрезаем, что не помещается в область*/
+    background: #edebfa;
+    padding: 5px;
+    text-overflow: ellipsis;
+}
+.news{
+    width:1000px;
+    margin:auto;
+    columns: 150px 3;
+}
+article.news img{
+    width: 150px;
+}
+.faq{
+    padding-bottom: 0;
+    list-style-type:  none;;
+}
+ul.faq>li{
+    margin: 20px;
+}
+.faq>li:nth-child(even) summary{
+    background-color: #a99cf6;
+    color:white;
+}
+.faq>li:nth-child(odd) summary{
+    background-color: #dfa6ff;
+    color:white;
+}
+.policy{
+    margin-left: 500px;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #4c31d0 33%, #ad9ff5 66%, #d92fd7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #0B2349;
+    width: 1000px;
+
+
+
+}
+.promocodes{
+    display: flex; flex-direction: row; flex-wrap: wrap; justify-content:space-around; padding-bottom: 0; list-style-type:  none;
+}
+.promocodes li{
+    width: 200px; text-align:center; border: 3px solid blueviolet; border-radius: 40px
+}
+
+table{
+    border-collapse: collapse;
+    caption-side: top;
+    font-family: cursive;
+    text-align: center;
+    vertical-align: middle;
+}
+th {
+   border: 1px solid #8374d3;
+    background: linear-gradient(#dfa6ff, #ffffff, #bbaeef);
+   text-align: center;
+
+}
+tbody td:hover{
+    background-color: mistyrose;
+    color: dimgray;
+    transition: background 0.3s ease, color 0.2s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .name{
     text-align: center;
 }
-.navbar-brand {
-    font-size: 1.2em;
-    font-weight: 600;
-}
+
 
 .navbar-item {
     font-variant: small-caps;
@@ -41,17 +526,14 @@ table {
    font-size: 20px;
 }
 /* границы ячеек первого ряда таблицы */
-th {
-   border: 1px solid #8374d3;
-   background-color: #9887ed ;
-   text-align: center;
 
-}
 /* границы ячеек тела таблицы */
 td {
    border: 1px solid #8374d3;
     text-align: center;
+    empty-cells: hide;
 }
+
 
 .diagram_service{
     margin-bottom:300px;
@@ -61,14 +543,14 @@ td {
 .new_procedure{
 border: 4px solid #8374d3; padding:5px; margin:auto; width:500px;
 }
-.devis {
-    text-align: center;
-    color: red;
-}
+
 .ramka {
     border: 2px solid #8374d3;
+    font-weight: bold;
+    margin: 10px;
 
 }
 . buttn {
-    width:200px"
+    width:200px;
 }
+

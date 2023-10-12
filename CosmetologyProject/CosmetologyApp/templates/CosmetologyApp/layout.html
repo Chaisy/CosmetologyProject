@@ -22,9 +22,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/CosmetologyApp/"><img style=" height:40px" src="https://i.pinimg.com/564x/80/e8/d4/80e8d462d6bcf6f409f6a115dec15092.jpg"
-                                      alt="logo"></a>
-        <a href="/" class="navbar-brand">In Shine</a>
+        <div class="usualMenu">
+        <p class="navbar-brand"><a href="/" >In Shine</a></p>
         <a href="/CosmetologyApp/" class="navbar-item">Home</a>
         <a href="/CosmetologyApp/service" class="navbar-item">Service</a>
         <a href="/CosmetologyApp/static_info/" class="navbar-item">Static Info</a>
@@ -33,26 +32,31 @@
         <a href="/CosmetologyApp/faq/" class="navbar-item">FaQ</a>
         <a href="/CosmetologyApp/vacancy" class="navbar-item">Vacancy</a>
         <a href="/CosmetologyApp/promocode" class="navbar-item">Promocode</a>
-
         <a href="/CosmetologyApp/rewiew" class="navbar-item">Review</a>
+        <a href="/CosmetologyApp/private_policy" class="navbar-item">Policy</a>
+        <a href="/CosmetologyApp/HTML" class="navbar-item">HTML</a>
+        </div>
+<!--        <a href="/CosmetologyApp/"><img style=" height:40px" src="https://i.pinimg.com/564x/80/e8/d4/80e8d462d6bcf6f409f6a115dec15092.jpg"-->
+<!--                                      alt="logo"></a>-->
 
-
-
+        <div class="specialMenu">
         {% if user.is_authenticated %}
-        {% if user.is_superuser %}
-        <a href="/CosmetologyApp/diagram/" class="navbar-item">Diagram</a>
-        {%endif%}
-        <h class="navbar-item" ><font color="black">User: {{ user.get_username }}</font></h>
+
+        <h class="navbar-item" ><font color="white">User: {{ user.get_username }}</font></h>
 <!--        <h class="navbar-item">Phone: {{ doctor.get_number }}</h>-->
         <a href="/CosmetologyApp/shedule" class="navbar-item">Shedule</a>
         <a href="/CosmetologyApp/doctor" class="navbar-item">Doctors</a>
         <a href="/CosmetologyApp/client" class="navbar-item">Clients</a>
         <a href="/CosmetologyApp/accounts/logout/" class="navbar-item">Logout</a>
-
+        {% if user.is_superuser %}
+        <a href="/CosmetologyApp/diagram/" class="navbar-item">Diagram</a>
+        {%endif%}
         {% else %}
         <a href="/CosmetologyApp/accounts/login/" class="navbar-item">Login</a>
 
         {% endif %}
+        </div>
+
 
     </nav>
 

@@ -59,6 +59,8 @@ urlpatterns = [
     path('vacancy/<int:pk>/delete/', views.VacancyDelete.as_view(), name='delete_vacancy'),
     path('rewiew/', views.rewiew.as_view(), name='rewiew'),
     path('rewiew/add/', views.RewiewCreate, name='add_rewiew'),
+    path('HTML/', views.HTML.as_view(), name='html'),
+
 
 
 

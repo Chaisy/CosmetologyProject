@@ -1,0 +1,82 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block title %}Company Info{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'site.css' %}">
+<form action="Post">
+    <fieldset>
+    <label for="enable">Enable input green hover: </label>
+    <p><input type="text" id="enable" value="Enabled" /></p>
+    <label for="disable">Enable input red hover: </label>
+    <p><input type="text" id="disable" disabled value="Disabled" /></p>
+<!--    <p><input type="checkbox" name="animal1" value="Cat">Cat</p>-->
+<!--    <p><input type="checkbox" name="animal2" value="Dog">Dog</p>-->
+<!--    <p><input type="checkbox" name="animal3" value="Bird">Bird</p>-->
+        <input name="choise" type="radio" value="good"> <span>Good</span>
+        <input name="choise" type="radio" value="evil"> <span>Evil</span><br>
+        <input type="checkbox" name="a2"><span>Cat</span><br>
+        <input type="checkbox" name="a3"><span>Dog</span><br>
+        <input type="checkbox" name="a1"><span>Bird</span><br>
+        <input type="button" value="send">
+
+</fieldset>
+
+</form>
+
+<p class="Loremi">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deserunt dignissimos dolorem dolorum<br>
+    inventore ipsam modi molestiae neque nihil quae quia quis quo, quod quos saepe, tempora, tenetur voluptates
+    voluptatum?</p>
+
+<p class="greeting">Dogs</p>
+
+<table width="100%">
+   <tr>
+    <th>Леонардо</th><td>5</td><td>8</td>
+   </tr>
+   <tr>
+    <th>Рафаэль</th><td></td><td>11</td>
+   </tr>
+   <tr>
+    <th>Микеланджело</th><td>24</td><td style="color:red;"></td>
+   </tr>
+   <tr>
+    <th>Донателло</th><td></td><td>13</td>
+   </tr>
+  </table>
+
+
+
+<div id="box"></div>
+
+<code>print("Hello world")</code>
+<figure>
+    <article title="poema">
+
+            In nature, stars burn, not gathering into gold,<br>
+And just a glimpse at the skies,<wbr> - so beautifully and young it unfolds.<br>
+
+Mountains rise amidst forests and lakes so clear,<br>
+With their beauty, they grant the world wonders for years.<br>
+
+Rivers flow like verses, composing water's song,<br>
+And the sun smiles, lighting the earth all day long.<br>
+
+All flowers, like beauties, bloom in the spring's embrace,<br>
+And nature, like a muse, is always ready to inspire our grace.<br>
+
+In this natural beauty, life's harmony does reside,<br>
+And in every corner of it,<wbr> - a unique symphony does hide.<br>
+
+May your heart blossom like a flower in May's embrace,<br>
+In harmony with nature,<wbr> you'll find your bright path's trace always.<br>
+    </article>
+    <figcaption title="poem_caption" style="position: relative;">
+            Rudyard Kipling <i>"The Lovers' Litany"</i>
+    </figcaption>
+</figure>
+
+
+
+{% endblock %}
