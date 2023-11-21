@@ -5,6 +5,61 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'site.css' %}" xmlns="http://www.w3.org/1999/html">
+<style>
+        :root {
+          --animation-time: 40s;
+        }
+        .image-container {
+            height: 530px;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 20s ease-in-out;
+        }
+        .image-container img:nth-child(1) {
+            animation: imageAnimation1 var(--animation-time) infinite;
+        }
+        .image-container img:nth-child(2) {
+            animation: imageAnimation2 var(--animation-time) infinite;
+        }
+        .image-container img:nth-child(3) {
+            animation: imageAnimation3 var(--animation-time) infinite;
+        }
+        .image-container img:nth-child(4) {
+            animation: imageAnimation4 var(--animation-time) infinite;
+        }
+        @keyframes imageAnimation1 {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+        }
+        @keyframes imageAnimation2 {
+            0%, 100% { transform: translateX(100%); }
+            25% { transform: translateX(0); }
+            50% { transform: translateX(-100%); }
+            75% { transform: translateX(-200%); }
+        }
+        @keyframes imageAnimation3 {
+            0%, 100% { transform: translateX(200%); }
+            25% { transform: translateX(100%); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-100%); }
+        }
+        @keyframes imageAnimation4 {
+            0%, 100% { transform: translateX(300%); }
+            25% { transform: translateX(200%); }
+            50% { transform: translateX(100%); }
+            75% { transform: translateX(0); }
+        }
+        input {
+            margin: 30px;
+        }
+    </style>
 <section>
     <h1 title="about us">About Us</h1>
     <p class="devis"><q title="our devis" lang="de">Jede Klinik sind in erster Linie die Spezialisten, die darin arbeiten.</q></p>
@@ -19,6 +74,17 @@
     cellulite, puffiness, and varicose veins -
         all these problems you can solve in our clinic.<dfn><abbr title="Director of our company" >-Daria</abbr> </dfn></blockquote>
 </section>
+    <div class="image-container" id="imageContainer">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/123/392/non_2x/realistic-cosmetic-advertisement-editable-banner-vector.jpg" alt="Banner #1">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/123/427/non_2x/realistic-cosmetic-advertisement-editable-banner-vector.jpg" alt="Banner #2">
+        <img src="https://static.vecteezy.com/system/resources/previews/001/361/830/non_2x/realistic-cosmetic-beauty-package-template-vector.jpg" alt="Banner #3">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/123/381/non_2x/bottle-aloe-vera-cosmetic-mockup-on-green-background-with-your-brand-ready-for-print-ads-or-magazine-design-transparent-and-shine-realistic-3d-style-vector.jpg" alt="Banner #4">
+    </div>
+    <div align="center">
+        <form>
+            <input type="range" min="1" max="200" step="1" id="animationTime">
+        </form>
+    </div>
 <section class="media-sphere">
     <div style="text-align: center">
     <a href="/CosmetologyApp/">
@@ -135,28 +201,22 @@ In harmony with nature,<wbr> you'll find your bright path's trace always.<br>
 
 </section>
 
-
-
-
-<!--<section style="text-align: center; margin: 10px;">-->
-<!--    <article>-->
-<!--    <iframe name="fr" width="400" height="400" srcdoc=" <br />-->
-<!--        CERTIFICATE OF MEMBERSHIP IN NCoC (NATIONAL COMMUNITY OF COSMETIC)-->
-<!--        <br />-->
-<!--        <br />-->
-<!--        <br />-->
-<!--        <h1>CERTIFICATE</h1>-->
-<!--        <h2><small>regarding the Inclusion of Information</small></h2>-->
-<!--        <br />-->
-
-<!--        Minsk N  33 august 2023-->
-<!--        <br />-->
-<!--        <b>ООО 'Talin Cosmetic'</b>-->
-<!--        <br />-->
-
-<!--        Shevtsova D.S.-->
-<!--        <br />-->
-<!--        Director"></iframe>-->
-<!--    </article>-->
-<!--</section>-->
+{% if user.is_superuser %}
+<div>
+    <label>Enter time of image change: </label>
+    <input type="number" id="time" value="5" onchange="RestartCarousel()"/>
+</div>
+{% endif %}
+<div class="carousel-container">
+    <div class="carousel-slide">
+        <a href="https://com.com"><img src="https://static.vecteezy.com/system/resources/previews/002/123/397/non_2x/realistic-cosmetic-advertisement-editable-banner-vector.jpg" alt="1"></a>
+    </div>
+    <div class="carousel-slide">
+        <a href="https://facebook.com"><img src="https://static.vecteezy.com/system/resources/previews/002/124/914/non_2x/realistic-cosmetic-advertisement-editable-banner-vector.jpg" alt="2"></a>
+    </div>
+    <div class="carousel-slide">
+        <a href="https://twitter.com"><img src="https://static.vecteezy.com/system/resources/previews/002/123/392/non_2x/realistic-cosmetic-advertisement-editable-banner-vector.jpg" alt="3"></a>
+    </div>
+</div>
+<script src="{% static 'js/site.js' %}"></script>
 {% endblock %}

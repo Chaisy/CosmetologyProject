@@ -1,0 +1,25 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block title %}Company Info{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'site.css' %}">
+    <style>
+        form, input[type="range"], input[type="color"] {
+            font-size: 16px;
+        }
+    </style>
+<input type="checkbox" id="show_change_text"  onchange="Show_text()">
+<label for="show_change_text">Show text</label>
+
+<form id="appearanceForm" style="display: none; text-align: center" name="appearanceForm">
+    <input type="range" id="fontSize" min="10" max="50" step="1">
+            <input type="color" id="textColor">
+            <input type="color" id="backgroundColor">
+         <br><br><br>
+        <h1 id="text_dec">Example</h1>
+</form>
+
+    <script src="{% static 'js/site.js' %}"></script>
+{% endblock %}

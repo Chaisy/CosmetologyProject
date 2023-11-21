@@ -1,0 +1,19 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block content %}
+{% load static %}
+<h1>Enter date of birth</h1>
+<form name="inputForm" onsubmit="EvaluateInfo(); ">
+    <div>
+        <label>date of birth</label>
+        <input type="date" name="date_of_bitrh" />
+    </div>
+    <div>
+        <input type="submit" value="Send" />
+    </div>
+</form>
+
+
+
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+{% endblock %}

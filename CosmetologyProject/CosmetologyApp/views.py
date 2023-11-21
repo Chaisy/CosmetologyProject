@@ -288,18 +288,18 @@ class DoctortForm(forms.Form):
     photo_link = forms.CharField(min_length=2)
 
 
-class ServiceDetailsView(View):
-    @staticmethod
-    def get(request, id):
-        try:
-            service = Service.objects.get(id=id)
-        except Service.DoesNotExist:
-            raise Http404("Service doesn't exist :(")
-        return render(
-            request,
-            'CosmetologyApp/service_detail.html',
-            context={'service': service, }
-        )
+# class ServiceDetailsView(View):
+#     @staticmethod
+#     def get(request, id):
+#         try:
+#             service = Service.objects.get(id=id)
+#         except Service.DoesNotExist:
+#             raise Http404("Service doesn't exist :(")
+#         return render(
+#             request,
+#             'CosmetologyApp/service_detail.html',
+#             context={'service': service, }
+#         )
 
 
 @method_decorator(login_required, name='dispatch')
@@ -404,6 +404,20 @@ class ServiceListView(generic.ListView):
     template_name = 'CosmetologyApp/service.html'
 
 
+class ServiceDetailsView(View):
+    @staticmethod
+    def get(request, id):
+        try:
+            service = Service.objects.get(id=id)
+            service_price = service.price
+        except Service.DoesNotExist:
+            raise Http404("Service doesn't exist :(")
+        return render(
+            request,
+            'CosmetologyApp/service_detail.html',
+            context={'service': service,
+                     'service_price': service_price}
+        )
 
 @method_decorator(login_required, name='dispatch')
 class ClientListView(generic.ListView):
@@ -732,3 +746,51 @@ class PromocodeDetailsView(View):
             'CosmetologyApp/promocode_detail.html',
             context={'promocode': promocode, }
         )
+
+#FOR JS LAB-------------------------------
+class TextChangeView(View):
+    @staticmethod
+    def get(request):
+        return render(
+            request,
+            'js_templates/change_text.html'
+        )
+class CheckAgeView(View):
+    @staticmethod
+    def get(request):
+        return render(
+            request,
+            'js_templates/check_age.html'
+        )
+
+class TableWithJavaScriptView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/table_task.html')
+
+
+class LastDateTaskView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/last_date_task.html')
+
+class ScrollingView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/scrolling.html')
+
+class CauroselView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/caurosel.html')
+
+
+class ExtendsView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/ExtendsInheritanceTest.html')
+
+class ProtoView(View):
+    @staticmethod
+    def get(request):
+        return render(request, 'js_templates/PrototypeInheritanceTest.html')

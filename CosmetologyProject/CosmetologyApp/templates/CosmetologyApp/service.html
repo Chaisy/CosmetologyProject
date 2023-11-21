@@ -1,31 +1,25 @@
 {% extends "CosmetologyApp/layout.html" %}
 
 {% block content %}
+{% load static %}
+
 <h1 class="name">Services</h1>
 {% if service_list %}
 <ul class="list_service">
     {% for service in service_list %}
     <li>
         <a href="/CosmetologyApp/service/{{ service.id }}">{{ service.procedure }}</a>
-        <p>Price: {{service.price}}</p>
+        <p id="kostyl">Price: {{service.price}}</p>
     </li>
 
     {% endfor %}}
 
 </ul>
-<!--<table>-->
-<!--<tr><th>Service:</th><th>Price:</th></tr> &lt;!&ndash;ряд с ячейками заголовков&ndash;&gt;-->
-
-<!--    {% for service in service_list %}-->
-<!--    <tr><td> <a href="/CosmetologyApp/service/{{ service.id }}">{{ service.procedure }}</a></td>-->
-<!--        <td>{{ service.price }}</td></tr>-->
-<!--    {% endfor %}-->
-
-<!--</table>-->
 {% else %}
     <p>There are no services in the salon</p>
 {% endif %}
 {% if user.is_superuser %}
     <p><a href="/CosmetologyApp/service/add/">Add</a></p>
 {% endif %}
+<script src="{% static 'js/site.js' %}"></script>
 {% endblock %}

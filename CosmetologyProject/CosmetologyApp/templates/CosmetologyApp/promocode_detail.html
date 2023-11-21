@@ -1,16 +1,22 @@
 {% extends "CosmetologyApp/layout.html" %}
 
 {% block title %}Promocode Details{% endblock %}
+{%  load static %}
 {% block content %}
 
-    <article style="width: 200px; margin:auto; text-align:center">
-        <h3 style="margin:10px; color:#9887ed"> {{promocode.code}}</h3>
-        <p>Start Date: {{promocode.start_date}}</p>
-        <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
+    <div id="parallax">
+        <div class="container" itemscope style="
+    background-image: url(https://avatars.mds.yandex.net/i?id=772cdad8e10ce5c4790a78952f3a15eaa168f057-10636720-images-thumbs&n=13);
+        border:1px solid purple; border-radius:20px; margin:auto; text-align:center">
+            <h3 style="margin:10px; color:#9887ed"> {{promocode.code}}</h3>
+            <p>Start Date: {{promocode.start_date}}</p>
+            <p style="margin:10px">End Date: {{promocode.expiration_date}}</p>
 
-    </article>
+        </div>
+    </div>
+
     {% if user.is_superuser %}
-            <p><a  href="/CosmetologyApp/vacancy/{{ vacancy.id }}/delete/">Delete</a></p>
+            <p><a  href="/CosmetologyApp/promocode/{{ promocode.id }}/delete/">Delete</a></p>
     {% endif %}
-
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
 {% endblock %}

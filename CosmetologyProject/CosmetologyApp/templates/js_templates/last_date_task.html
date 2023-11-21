@@ -1,0 +1,13 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block content %}
+
+<button onclick="generateAndDisplayDates()">Generate dates and show the latest</button>
+<p id="p"></p>
+<p id="p1"></p>
+
+
+
+{%load static%}
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+{%endblock%}

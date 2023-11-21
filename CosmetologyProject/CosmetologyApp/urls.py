@@ -61,6 +61,15 @@ urlpatterns = [
     path('rewiew/add/', views.RewiewCreate, name='add_rewiew'),
     path('HTML/', views.HTML.as_view(), name='html'),
 
+    path('HTML/change_text/', views.TextChangeView.as_view(), name='change_text'),
+    path('HTML/check_age/', views.CheckAgeView.as_view(), name='check_age'),
+    path('HTML/table_task/', views.TableWithJavaScriptView.as_view(), name='table_task'),
+    path('HTML/last_date_task/', views.LastDateTaskView.as_view(), name='last_date_task'),
+    path('HTML/scrolling/', views.ScrollingView.as_view(), name='scrolling'),
+    path('HTML/caurosel/', views.CauroselView.as_view(), name='caurosel'),
+    path('HTML/ExtendsInheritanceTest/', views.ExtendsView.as_view(), name='ExtendsInheritanceTest'),
+    path('HTML/PrototypeInheritanceTest/', views.ProtoView.as_view(), name='PrototypeInheritanceTest'),
+
 
 
 

@@ -2,14 +2,47 @@
 
 {% block title %}Service Details{% endblock %}
 {% block content %}
-
+{% load static %}
+<style>
+        input {
+            width: 30%;
+            padding: 5px 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+        button {
+            width: 30%;
+            background-color: #555555;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
 
     <ul>
         <li>Procedure: {{ service.procedure }}</li>
-        <li>Price: {{ service.price }}</li>
+        <li id="kostyl">{{ service_price }}</li>
+        <p id="result"></p>
     </ul>
     {% if user.is_superuser %}
             <p><a  href="/CosmetologyApp/service/{{ service.id }}/delete/">Delete</a></p>
+<div align="center">
+      <form>
+        <input type="number" min="0" max="100" step="1"
+               title="Enter the discount."
+               id="discountInput" value="0"><br>
+        <button id="enterButton">Enter</button>
+      </form>
+    </div>
     {% endif %}
-
+<script src="{% static 'js/site.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,36 @@
+{% extends "CosmetologyApp/layout.html" %}
+
+{% block content %}
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <h1>Создание Таблицы</h1>
+    <!-- Ввод и кнопки для управления таблицей -->
+    <label for="tableSize">Размер таблицы:</label>
+    <input type="number" id="tableSize" value="5">
+    <button onclick="generateTable()">Создать Таблицу</button>
+    <button onclick="transposeTable()">Транспонировать</button>
+    <button onclick="addRow()">Добавить Ряд</button>
+    <button onclick="addColumn()">Добавить Колонку</button>
+    <div>
+        <label>Number of possible selected cells in a row</label>
+        <input type="number" max="10" id="cellsNuber" value="3"/>
+    </div>
+
+    <!-- Основная таблица, которую необходимо сгенерировать -->
+    <table id="mainTable">
+    </table>
+
+
+
+{%load static%}
+<script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+{%endblock%}
