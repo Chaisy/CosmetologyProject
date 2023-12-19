@@ -1,0 +1,310 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #8c64b4;
+    height: 100px;
+}
+.navlink {
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #312f2f;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 5px;
+    margin-right: 6px;
+    border-radius: 20px;
+    border: 1px solid #312f2f;
+    padding: 15px;
+}
+.navlink:hover{
+        color: lightgray;
+}
+.active {
+    color: lightgray;
+    font-family: cursive;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid #312f2f;
+    /*padding: 15px;*/
+    display: block;
+    width: 30%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+select {
+    display: block;
+    width: 30%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+button {
+    border-radius: 20px;
+    border: 1px solid #312f2f;
+    /*padding: 15px;*/
+    height: 20%;
+    width: 30%;
+    background-color: #8c64b4;
+    /*border: none;*/
+    color: #312f2f;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #8c64b4;
+    color: lightgray;
+    height: 30%;
+    width: 40%;
+    transition-property: width, height;
+    transition: 2s linear;
+}       
+
+
+.simpleLink {
+    text-align: center;
+    text-decoration: none;
+    color: #8c64b4;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 5px;
+    margin-right: 6px;
+    padding-top: 15px;
+    cursor: pointer;
+}
+.simplelink .active {
+    color: #8c64b4;
+}
+
+.listBox {
+    width: 100%;
+    background: lightgray;
+    cursor: pointer;
+}
+.listBox:hover li {
+    color: #8c64b4;
+    opacity: 0.2;
+}
+.listBox li {
+    text-align: center;
+    color: #8c64b4;
+    list-style: none;
+    padding: 10px;
+    background: lightgray;
+    transition: transform 0.5s;
+}
+.listBox li:hover {
+    color: #312f2f;
+    transform: scale(1.1);
+    z-index: 5;
+    background: #8c64b4;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+.listBox > .activeElement {
+    color: #312f2f;
+    background: #8c64b4;
+}
+.listBox:hover > .activeElement {
+    color: #312f2f;
+    background: #8c64b4;
+    opacity: 0.2;
+}
+.listBox > .activeElement:hover {
+    color: #312f2f;
+    background: #8c64b4;
+    transform: scale(1.1);
+    z-index: 5;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+.optionBar {
+    margin: 50px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gridContainer {
+    padding: 30px;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.gridItem {
+    text-align: center;
+}
+
+.flexContainer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 100%;
+}
+.flexItem {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+}
+.searchInfo{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100%;
+}
+.flexItem + .flexItem {
+	margin-left: 23%;
+}
+.flexItem:nth-child(1) {
+    flex: 4;
+}
+.flexItem:nth-child(2) {
+    flex: 1;
+}
+
+
+.photoCard {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    /*width: 500px;*/
+    border: 1px solid #312f2f;
+}
+.photoCard:hover{
+    /*border: 1px solid #312f2f;*/
+}
+.photoCard img {
+    width: 450px;
+    /*height: 200px;*/
+    border-radius: 20px;
+    transition: transform 1.0s, filter 0.6s;
+}
+.photoCard figcaption {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 300%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*opacity: 0;*/
+    transition: opacity 0.6s;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #312f2f;
+}
+.photoCard:hover {
+    /*transform: scale(1.15);*/
+}
+.photoCard:hover img {
+    transform: rotate(1turn);
+    filter: brightness(70%);
+}
+/*.photoCard:hover figcaption {*/
+/*    opacity: 1;*/
+/*}*/
+
+.information {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.information > img {
+    padding: 30px;
+    max-width: 500px;
+    margin-left: 30%;
+}
+.information > .table {
+    text-align: left;
+    color:#8c64b4;
+    width: 100%;
+    font-size: x-large;
+    border-collapse: collapse;
+}
+.information > .table tr:nth-child(even) {
+    background-color: lightgray;
+}
+.information > .table tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.modal {
+    background: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+}
+.close {
+    cursor: pointer;
+}
+.modal-body {
+    margin-bottom: 20px;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+.page {
+    margin: 0 6px;
+    background: lightgray;
+    max-width: auto;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 6px;
+}  
+.pagination > .activePage {
+    background: #312f2f;
+    position: relative;
+}
